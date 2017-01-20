@@ -24,6 +24,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Notifications;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -223,6 +224,18 @@ namespace Revels_17.Views
                 else
                 {
                     Favs.Add(eve.id);
+
+                    
+
+                    var toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText02);
+                    var strings = toastXml.GetElementsByTagName("text");
+                    strings[0].AppendChild(toastXml.CreateTextNode("Event Reminder for " + eve.Name));
+                    strings[1].AppendChild(toastXml.CreateTextNode("You have favourited this event starting at " + eve.Stime));
+
+                    DateTime d = Convert.ToDateTime(eve.Stime);
+                    var off = (d - DateTime.Now).TotalSeconds;
+
+                    ScheduledToastNotification toast = new ScheduledToastNotification(toastXml, DateTimeOffset.Now.AddSeconds(off));
                 }
             }
 
