@@ -41,11 +41,11 @@ namespace Revels_17.Views
             {
                 foreach (Category cat in list.data)
                 {
-                    cat.Image = "ms-appx:///Assets/Category Icons/TT-" + cat.cname + ".png";
+                    cat.Image = "ms-appx:///Assets/Category Icons/" + cat.cname + ".png";
                     switch (cat.cname)
                     {
-                        case "Featured Event-Paper Presentation":
-                            cat.Image = "ms-appx:///Assets/Square71x71Logo.scale-100.png";
+                        case "Sports":
+                            cat.Image = "ms:appx:///Assets/Square44x44Logo.scale-100.png";
                             break;
                     }
                 }

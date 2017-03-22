@@ -46,7 +46,7 @@ namespace Revels_17.Classes
             Day = Sched.day;
             Round = Sched.round;
             cid = eve.cid;
-            Image = "ms-appx:///Assets/Category Icons/TT-" + eve.cname + ".png";
+            Image = "ms-appx:///Assets/Category Icons/" + eve.cname + ".png";
 
             switch(eve.cname)
             {

@@ -358,13 +358,14 @@
     <Language Code="zu-za" InMinimumRequirementSet="true" />
   </SupportedLocales>
   <ProductReservedInfo>
-    <MainPackageIdentityName>22274VinayakAgarwal.5576343274E9F</MainPackageIdentityName>
+    <MainPackageIdentityName>22274VinayakAgarwal.Revels</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>TechTatva'16</ReservedName>
+      <ReservedName>Revels</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
     <MainPackageIdentityName>22274VinayakAgarwal.TechTatva16</MainPackageIdentityName>
+    <MainPackageIdentityName>22274VinayakAgarwal.5576343274E9F</MainPackageIdentityName>
   </AccountPackageIdentityNames>
-  <PackageInfoList LandingUrl="https://developer.microsoft.com/dashboard/Application?appId=9NBLGGH42HDZ" />
+  <PackageInfoList LandingUrl="https://developer.microsoft.com/dashboard/Application?appId=9PCTL5DNPW64" />
 </StoreAssociation>

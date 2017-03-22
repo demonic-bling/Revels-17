@@ -61,7 +61,7 @@
 
                 <TextBlock Foreground="{StaticResource AppAccentColorBrush}" Style="{StaticResource HeaderTextBlockStyle}" Margin="5,2.5,0,2.5">
                     <TextBlock.Text>
-                        #techtatva16
+                        #revels17
                     </TextBlock.Text>
                 </TextBlock>
                 <Viewbox VerticalAlignment="Top" Grid.Row="1">

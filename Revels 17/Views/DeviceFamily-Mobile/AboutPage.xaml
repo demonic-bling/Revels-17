@@ -21,7 +21,7 @@
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
-        <Image Name="BannerImage" Source="/Assets/banner.jpg" Stretch="Fill"></Image>
+        <Image Name="BannerImage" Source="/Assets/banner.png" Stretch="Fill"></Image>
 
         <ScrollViewer Grid.Row="1">
             <!--TODO: Content should be placed within the following grid-->
@@ -31,10 +31,14 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <TextBlock Name="TextDescription" FontFamily="Segoe WP" FontSize="16" FontWeight="Normal" TextWrapping="Wrap">
-                  TechTatva is a national level technical fest in India organized by Manipal Institute of Technology students every year. With a plethora of events and workshops from all the spheres of Engineering organized by experts, TechTatva Fest witnesses mass participation from other colleges.
-
-                <LineBreak/><LineBreak/>Curiosity is the quality that forms the foundation of all the other milestones of innovation. The insatiable thirst for knowledge gives rise to a never ending chain of questions, which further lead to imagination, thinking, experimentation and implementation.
-                <LineBreak/><LineBreak/>This year, we celebrate the spirit of being "Passionately Curious", something that lies at the heart of every innovation. Join us from 12th to 15th October to witness this spirit among the engineers of tomorrow.
+                  
+                                    Revels '17 presents the theme of the fest - Carnaval: The Rythm of Life. Life,
+                    in it's innumerable twists and turns provides us with both, opportunities and failures. 
+                    Yet, it is what we do with them that makes the difference. Life is a Carnaval, one in which we wait
+                    long queues to enjoy short rides, but it's those moments of excitement that inspire us to reach our limits.
+                    It is those moments which fuel our imaginations, inspire our creativity and make us feel alive. 
+                    <LineBreak/> Forget all worries for a little while, it's time to live a little more. Revels '17 - the biggest
+                    Carnaval is coming your way.
 
                 </TextBlock>
 

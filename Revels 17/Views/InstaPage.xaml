@@ -64,7 +64,7 @@
 
                 <TextBlock Grid.Row="1" Foreground="{StaticResource AppAccentColorBrush}" Style="{StaticResource SubheaderTextBlockStyle}" Margin="5,2.5,0,2.5">
                     <TextBlock.Text>
-                        #techtatva16
+                        #revels17
                     </TextBlock.Text>
                 </TextBlock>
                 

@@ -104,7 +104,7 @@ namespace Revels_17.Views
                 using (HttpClient client = new HttpClient())
                 {
                     Insta insta = new Insta();
-                    var response = await client.GetStringAsync("https://api.instagram.com/v1/tags/techtatva16/media/recent?access_token=630237785.f53975e.8dcfa635acf14fcbb99681c60519d04c");
+                    var response = await client.GetStringAsync("https://api.instagram.com/v1/tags/revels17/media/recent?access_token=630237785.f53975e.8dcfa635acf14fcbb99681c60519d04c");
                     insta = JsonConvert.DeserializeObject<Insta>(response);
 
                     instagram = insta;

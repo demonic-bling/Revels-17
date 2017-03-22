@@ -21,6 +21,7 @@
     <AppxBundle>Never</AppxBundle>
     <AppxBundlePlatforms>x86|arm</AppxBundlePlatforms>
     <PackageCertificateThumbprint>2221620A869AB06F9F985BF36DE9394F8DD6AEAD</PackageCertificateThumbprint>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -133,8 +134,8 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\OnlineEventsPage.xaml.cs">
-      <DependentUpon>OnlineEventsPage.xaml</DependentUpon>
+    <Compile Include="Views\Proshow.xaml.cs">
+      <DependentUpon>Proshow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ResultsPage.xaml.cs" />
     <Compile Include="Views\SettingsPage.xaml.cs">
@@ -147,36 +148,28 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\banner.jpg" />
-    <Content Include="Assets\Category Icons\TT-acumen.png" />
-    <Content Include="Assets\Category Icons\TT-airborne.png" />
-    <Content Include="Assets\Category Icons\TT-alacrity.png" />
-    <Content Include="Assets\Category Icons\TT-bizzmaestro.png" />
-    <Content Include="Assets\Category Icons\TT-cheminova.png" />
-    <Content Include="Assets\Category Icons\TT-Chrysalis.png" />
-    <Content Include="Assets\Category Icons\TT-constructure.png" />
-    <Content Include="Assets\Category Icons\TT-Cosmiccon.png" />
-    <Content Include="Assets\Category Icons\TT-cryptoss.png" />
-    <Content Include="Assets\Category Icons\TT-electrific.png" />
-    <Content Include="Assets\Category Icons\TT-Energia.png" />
-    <Content Include="Assets\Category Icons\TT-epsilon.png" />
-    <Content Include="Assets\Category Icons\TT-Fuel RC 5.png" />
-    <Content Include="Assets\Category Icons\TT-gaming.png" />
-    <Content Include="Assets\Category Icons\TT-kraftwagen.png" />
-    <Content Include="Assets\Category Icons\TT-mechanize.png" />
-    <Content Include="Assets\Category Icons\TT-mechatron.png" />
-    <Content Include="Assets\Category Icons\TT-Open Category.png" />
-    <Content Include="Assets\Category Icons\TT-Questionable Intelligence.png" />
-    <Content Include="Assets\Category Icons\TT-robotrek.png" />
-    <Content Include="Assets\Category Icons\TT-Robowars.png" />
-    <Content Include="Assets\Category Icons\TT-The Manipal Conclave.png" />
-    <Content Include="Assets\Category Icons\TT-turing.png" />
+    <Content Include="Assets\banner.png" />
+    <Content Include="Assets\Category Icons\animania.png" />
+    <Content Include="Assets\Category Icons\anubhuti.png" />
+    <Content Include="Assets\Category Icons\crescendo.png" />
+    <Content Include="Assets\Category Icons\dramebaaz.png" />
+    <Content Include="Assets\Category Icons\eq iq.png" />
+    <Content Include="Assets\Category Icons\ergo.png" />
+    <Content Include="Assets\Category Icons\footloose.png" />
+    <Content Include="Assets\Category Icons\gaming.png" />
+    <Content Include="Assets\Category Icons\haute couture.png" />
+    <Content Include="Assets\Category Icons\iridescent .png" />
+    <Content Include="Assets\Category Icons\kalakriti.png" />
+    <Content Include="Assets\Category Icons\lensation.png" />
+    <Content Include="Assets\Category Icons\paradigm shift.png" />
+    <Content Include="Assets\Category Icons\psychus.png" />
+    <Content Include="Assets\Category Icons\xventure.png" />
     <Content Include="Assets\DevImages\android_anurag.jpg" />
     <Content Include="Assets\DevImages\anuraag.jpg" />
+    <Content Include="Assets\DevImages\avikant.jpg" />
     <Content Include="Assets\DevImages\Ayush.jpg" />
     <Content Include="Assets\Icons\facebook-icon.png" />
     <Content Include="Assets\Icons\insta-icon.png" />
-    <Content Include="Assets\DevImages\manas.jpg" />
     <Content Include="Assets\DevImages\Naman.jpg" />
     <Content Include="Assets\DevImages\shubham.jpg" />
     <Content Include="Assets\Icons\twitter-icon.png" />
@@ -186,6 +179,12 @@
     <Content Include="Assets\DevImages\ykl.jpg" />
     <Content Include="Assets\error.png" />
     <Content Include="Assets\Icons\Linux.png" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Assets\NewStoreLogo.scale-100.png" />
+    <Content Include="Assets\NewStoreLogo.scale-125.png" />
+    <Content Include="Assets\NewStoreLogo.scale-150.png" />
+    <Content Include="Assets\NewStoreLogo.scale-200.png" />
+    <Content Include="Assets\NewStoreLogo.scale-400.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-125.png" />
     <Content Include="Assets\SplashScreen.scale-150.png" />
@@ -194,6 +193,7 @@
     <Content Include="Assets\Square150x150Logo.scale-100.png" />
     <Content Include="Assets\Square150x150Logo.scale-125.png" />
     <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-400.png" />
     <Content Include="Assets\Square310x310Logo.scale-100.png" />
     <Content Include="Assets\Square310x310Logo.scale-125.png" />
@@ -203,30 +203,29 @@
     <Content Include="Assets\Square44x44Logo.scale-100.png" />
     <Content Include="Assets\Square44x44Logo.scale-125.png" />
     <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-400.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16_altform-unplated.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256_altform-unplated.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32_altform-unplated.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48_altform-unplated.png" />
     <Content Include="Assets\Square71x71Logo.scale-100.png" />
     <Content Include="Assets\Square71x71Logo.scale-125.png" />
     <Content Include="Assets\Square71x71Logo.scale-150.png" />
     <Content Include="Assets\Square71x71Logo.scale-200.png" />
     <Content Include="Assets\Square71x71Logo.scale-400.png" />
-    <Content Include="Assets\StoreLogo.scale-100.png" />
-    <Content Include="Assets\StoreLogo.scale-125.png" />
-    <Content Include="Assets\StoreLogo.scale-150.png" />
-    <Content Include="Assets\StoreLogo.scale-200.png" />
-    <Content Include="Assets\StoreLogo.scale-400.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <None Include="Package.StoreAssociation.xml" />
-    <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\Square150x150Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -305,7 +304,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\OnlineEventsPage.xaml">
+    <Page Include="Views\Proshow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

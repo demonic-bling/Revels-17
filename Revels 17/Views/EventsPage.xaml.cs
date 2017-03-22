@@ -25,6 +25,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Notifications;
+using System.Globalization;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -232,10 +234,67 @@ namespace Revels_17.Views
                     strings[0].AppendChild(toastXml.CreateTextNode("Event Reminder for " + eve.Name));
                     strings[1].AppendChild(toastXml.CreateTextNode("You have favourited this event starting at " + eve.Stime));
 
-                    DateTime d = Convert.ToDateTime(eve.Stime);
-                    var off = (d - DateTime.Now).TotalSeconds;
+                    string title = "Event Favorited";
+                    string content = "But there will be no reminder displayed due to parse exception";
 
-                    ScheduledToastNotification toast = new ScheduledToastNotification(toastXml, DateTimeOffset.Now.AddSeconds(off));
+
+                    // Construct the visuals of the toast
+                    ToastVisual visual = new ToastVisual()
+                    {
+                        BindingGeneric = new ToastBindingGeneric()
+                        {
+                            Children =
+                            {
+                                new AdaptiveText()
+                                {
+                                    Text = title
+                                },
+
+                                new AdaptiveText()
+                                {
+                                    Text = content
+                                },
+                              },
+                        }
+                    };
+
+                    ToastContent errtoastContent = new ToastContent()
+                    {
+                        Visual = visual,
+                    };
+                    
+                    var sucXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText02);
+                    var sucstrings = sucXml.GetElementsByTagName("text");
+                    sucstrings[0].AppendChild(sucXml.CreateTextNode(eve.Name + " successfully favourited"));
+                    sucstrings[1].AppendChild(sucXml.CreateTextNode("A reminder will be sent an hour before the event"));
+
+                    try
+                    {
+                        DateTime d = DateTime.ParseExact(eve.Stime, "h.mm tt", CultureInfo.InvariantCulture);
+                        var off = (d - DateTime.Now).TotalSeconds;
+                        off = off - 3600;
+
+                        ToastNotificationManager.CreateToastNotifier().Show(new ToastNotification(sucXml));
+                        ScheduledToastNotification toast = new ScheduledToastNotification(toastXml, DateTimeOffset.Now.AddSeconds(off));
+                    }
+                    catch(Exception ex)
+                    {
+
+                        try
+                        {
+                            DateTime d = DateTime.ParseExact(eve.Stime, "h:mm tt", CultureInfo.InvariantCulture);
+                            var off = (d - DateTime.Now).TotalSeconds;
+                            off = off - 3600;
+
+                            ToastNotificationManager.CreateToastNotifier().Show(new ToastNotification(sucXml));
+                            ScheduledToastNotification toast = new ScheduledToastNotification(toastXml, DateTimeOffset.Now.AddSeconds(off));
+                        }
+                        catch (Exception ex1) {
+                            var errtoast = new ToastNotification(errtoastContent.GetXml());
+                            ToastNotificationManager.CreateToastNotifier().Show(errtoast);
+                        }
+                    }
+                    
                 }
             }
 
@@ -328,12 +387,12 @@ namespace Revels_17.Views
 
             if (eve != null)
             {
-                if ((sender as RadioButton).Tag.Equals(""))
+                if ((sender as RadioButton).Tag.Equals(""))
                 {
                     (sender as RadioButton).Content = "Bookmark Event";
                 }
 
-                else if ((sender as RadioButton).Tag.Equals(""))
+                else if ((sender as RadioButton).Tag.Equals(""))
                 {
                     (sender as RadioButton).Content = "Remove Bookmark";
                 }
@@ -409,9 +468,9 @@ namespace Revels_17.Views
                 foreach (EventClass eve in list)
                 {
                     if (Favs.Contains(eve.id))
-                        eve.Fav_Image = "";
-                    else
                         eve.Fav_Image = "";
+                    else
+                        eve.Fav_Image = "";
                 }
 
                 List<EventClass> Day1Events = new List<EventClass>();

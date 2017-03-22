@@ -135,12 +135,12 @@ namespace Revels_17
                      }
                  }
 
-                 if (type == typeof(OnlineEventsPage))
+                 if (type == typeof(Proshow))
                  {
-                     Online_Button.IsChecked = true;
+                     CategoriesButton.IsChecked = true;
                      if (AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile")
                      {
-                         this.Title.Text = "ONLINE EVENTS";
+                         this.Title.Text = "PROSHOW";
                          this.HamburgerMenu.IsPaneOpen = false;
                      }
                  }
@@ -258,12 +258,6 @@ namespace Revels_17
                 this.contentFrame.Navigate(typeof(InstaPage));
         }
 
-        private void Online_Button_Checked(object sender, RoutedEventArgs e)
-        {
-            if (contentFrame.SourcePageType != typeof(OnlineEventsPage))
-                this.contentFrame.Navigate(typeof(OnlineEventsPage));
-        }
-
         private void SettingsButton_Checked(object sender, RoutedEventArgs e)
         {
             if (contentFrame.SourcePageType != typeof(SettingsPage))
@@ -356,6 +350,12 @@ namespace Revels_17
             }
             else
                 this.contentFrame.Navigate(typeof(EventsPage), (args.QueryText as string));
+        }
+
+        private void Proshow_Checked(object sender, RoutedEventArgs e)
+        {
+            if (contentFrame.SourcePageType != typeof(Proshow))
+                this.contentFrame.Navigate(typeof(Proshow));
         }
     }
 }
